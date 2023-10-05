@@ -4,6 +4,7 @@ require "connection.php";
 if(isset($_POST["email"]) & isset($_POST["password"])){
     $email = $_POST["email"];
     $password = $_POST["password"];
+    $rememberme = $_POST["rememberme"];
 
     if(empty($email)){
         echo("Please enter your email");
@@ -16,11 +17,24 @@ if(isset($_POST["email"]) & isset($_POST["password"])){
     }else if(($password) < 5 || strlen($password) > 20){
         echo("Password must have 8-16 characters");
     }else {
-        $userResultset = Database::search("SELECT * FROM `user` WHERE `email`='". $email ."' AND `password`='" . $password . "'");
-        $userRownumber = $userResultset->num_rows;
+        $customerResultset = Database::search("SELECT * FROM `user` WHERE `email`='". $email ."' AND `password`='" . $password . "'");
+        $customerRownumber = $customerResultset->num_rows;
 
-        if($userRownumber > 0){
-            $_SESSION["user"] = $userResultset->fetch_assoc();
+        if($customerRownumber > 0){
+            $_SESSION["user"] = $customerResultset->fetch_assoc();
+
+            if($rememberme == "true"){
+
+                setcookie("email",$email,time()+(60*60*24*365));
+                setcookie("password",$password,time()+(60*60*24*365));
+    
+            }else{
+    
+                setcookie("email","",-1);
+                setcookie("password","",-1);
+    
+            }
+
             echo("success");
         }else{
             echo("Invlied username or password");

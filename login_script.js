@@ -231,10 +231,12 @@ function type1(){
 function userlogin() {
     var email = document.getElementById("email");
     var password = document.getElementById("password1");
+    var rememberme = document.getElementById("rememberme");
 
     var form = new FormData();
     form.append("email", email.value);
     form.append("password", password.value);
+    form.append("rememberme", rememberme.checked);
 
     var request = new XMLHttpRequest();
 

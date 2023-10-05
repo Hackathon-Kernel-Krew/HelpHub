@@ -21,14 +21,29 @@
                                 <div class="col-12 mt-1 mb-1 text-center">
                                     <span class="def-header1">Sign In</span>
                                 </div>
+
+                                <?php
+                                $email = "";
+                                $password = "";
+
+                                if (isset($_COOKIE["email"])) {
+                                    $email = $_COOKIE["email"];
+                                }
+
+                                if (isset($_COOKIE["password"])) {
+                                    $password = $_COOKIE["password"];
+                                }
+
+                                ?>
+
                                 <div class="row">
                                     <div class="inputBox" onclick="type();">
-                                        <input type="text" required="required" id="email">
+                                        <input type="text" required="required" id="email" value="<?php echo $email; ?>">
                                         <span id="cu_email">Email</span>
                                         <i class="i"></i>
                                     </div>
                                     <div class="inputBox mt-5" onclick="type();">
-                                        <input type="password" class="password" required="required" id="password1">
+                                        <input type="password" class="password" required="required" id="password1" value="<?php echo $password ?>">
                                         <span id="cu_password">password</span>
                                         <div id="password-hide-btn1" onclick="shiftwPasswordHide('1');">
                                             <i class='bx bx-hide eye-icon'></i>
@@ -36,7 +51,7 @@
                                         <i class="i"></i>
                                     </div>
 
-                                    <div class="link mt-3" >
+                                    <div class="link mt-3">
                                         <a href="#" class="forgot-pass" onclick="forgotPassword();" id="forgot_text">Forgot password</a>
                                         <div class="spinner-border spinner-border-sm mt-1 text-danger d-none" id="forgot_loding" role="status">
                                             <span class="visually-hidden">Loading...</span>
