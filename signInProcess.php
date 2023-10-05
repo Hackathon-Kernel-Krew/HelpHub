@@ -16,11 +16,11 @@ if(isset($_POST["email"]) & isset($_POST["password"])){
     }else if(($password) < 5 || strlen($password) > 20){
         echo("Password must have 8-16 characters");
     }else {
-        $customerResultset = Database::search("SELECT * FROM `customer` WHERE `email`='". $email ."' AND `password`='" . $password . "'");
-        $customerRownumber = $customerResultset->num_rows;
+        $userResultset = Database::search("SELECT * FROM `user` WHERE `email`='". $email ."' AND `password`='" . $password . "'");
+        $userRownumber = $userResultset->num_rows;
 
-        if($customerRownumber > 0){
-            $_SESSION["user"] = $customerResultset->fetch_assoc();
+        if($userRownumber > 0){
+            $_SESSION["user"] = $userResultset->fetch_assoc();
             echo("success");
         }else{
             echo("Invlied username or password");
