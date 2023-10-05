@@ -1,0 +1,33 @@
+.img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.txt{
+    /* height: 70px; */
+    border: none;
+    color: gray;
+}
+
+.c{
+    /* height: 50px; */
+    cursor: pointer;
+    border:none;
+}
+
+.h{
+    font-family: "Kalam", cursive;
+    text-transform: uppercase;
+    /* text-align: center; */
+    color: #f5683d;
+}
+
+.button{
+    border-radius: 20px;
+    border-color: none;
+    width: 40px;
+    height: 40px;
+    color: white;
+}
