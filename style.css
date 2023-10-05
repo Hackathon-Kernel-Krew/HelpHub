@@ -11,6 +11,11 @@
     color: gray;
 }
 
+.txt2{
+    /* line-height: 24px; */
+    /* border: none; */
+    color: gray;
+}
 .c{
     /* height: 50px; */
     cursor: pointer;
