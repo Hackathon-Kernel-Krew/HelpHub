@@ -19,12 +19,17 @@
 
             <div class="col-12">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary" onclick="showmodel();">
                     Launch demo modal
                 </button>
 
+                <?php
+                require "./connection.php";
+                ?>
+
                 <!-- Modal -->
-                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                <div class="modal fade " id="exampleModal" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -56,7 +61,7 @@
 
                                         <div class="col-12">
                                             <div class="row">
-                                                <input class="form-control mt-3  txt " placeholder="What's on Your mind? Sahan" type="text">
+                                                <input class="form-control mt-3  txt " placeholder="What's on Your mind? Sahan" type="text" id="text">
                                             </div>
                                         </div>
 
@@ -68,15 +73,83 @@
                                                         <div class="card-body">
                                                             <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-2 mb-2">
                                                                 <input type="text" class="form-control c" placeholder="Add to your post">
-                                                                <div >
-                                                                    <input type="file" class="d-none" id="imageuploader"  />
-                                                                    <label for="imageuploader" class="btn btn-light button d-flex flex-row align-items-center justify-content-center" onclick="changeProductImage();"><i class="bi bi-images fs-2" style="color: green;"></i></label>
+                                                                <div>
+                                                                    <input type="file" class="d-none" id="imageuploader" />
+                                                                    <label for="imageuploader" class="btn btn-light button mt-3 d-flex flex-row align-items-center justify-content-center" onclick="changeProductImage();"><i class="bi bi-images fs-2" style="color: green;"></i></label>
                                                                 </div>
-                                                                <button class="btn btn-light me-md-2 button d-flex flex-row align-items-center justify-content-center" type="button"><i class="bi bi-tags-fill fs-2" style="color: blue;"></i></button>
-                                                                <button class="btn btn-light me-md-2 button d-flex flex-row align-items-center justify-content-center" type="button"><i class="bi bi-grid fs-2" style="color: red;"></i></button>
+
                                                             </div>
+
                                                         </div>
+
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+
+                                        <div class="col-12 ">
+                                            <div class="row">
+
+                                                <div class="d-grid d-md-flex justify-content-md-center mt-2 mb-2">
+                                                    <select class="form-select text-center" id="Category">
+                                                        <option value="0">Select Category</option>
+
+                                                        <?php
+
+                                                        $category_rs = Database::search("SELECT * FROM `category`");
+                                                        $category_num = $category_rs->num_rows;
+
+                                                        for ($z = 0; $z < $category_num; $z++) {
+                                                            $category_data = $category_rs->fetch_assoc();
+
+                                                        ?>
+
+                                                            <option value="<?php echo $category_data["id"]; ?>"><?php echo $category_data["c_name"]; ?></option>
+
+                                                        <?php
+
+                                                        }
+
+                                                        ?>
+
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 ">
+                                            <div class="row">
+
+                                                <div class="d-grid d-md-flex justify-content-md-center mt-2 mb-2">
+                                                    <select class="form-select text-center" id="tag">
+                                                        <option value="0">Select Tag</option>
+
+                                                        <?php
+
+                                                        $tag_rs = Database::search("SELECT * FROM `tage`");
+                                                        $tag_num = $tag_rs->num_rows;
+
+                                                        for ($z = 0; $z < $tag_num; $z++) {
+                                                            $tag_data = $tag_rs->fetch_assoc();
+
+                                                        ?>
+
+                                                        <option value="<?php echo $tag_data["id"]; ?>"><?php echo $tag_data["t_name"]; ?></option>
+
+                                                        <?php
+
+                                                        }
+
+                                                        ?>
+
+                                                    </select>
                                                 </div>
 
                                             </div>
@@ -85,27 +158,31 @@
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="d-grid mt-4 mb-4">
-                                                    <button class="btn " style="background-color: #f5683d;" type="button">POST</button>
+                                                    <button class="btn " style="background-color: #f5683d;" onclick="addProduct();" type="button">POST</button>
 
                                                 </div>
                                             </div>
                                         </div>
 
+
+
+
                                     </div>
                                 </div>
+
+
 
                             </div>
                         </div>
 
                     </div>
                 </div>
-            </div>
-        </div>
 
-    </div>
-    </div>
+                <script src="bootstrap.bundle.js"></script>
+                <script src="bootstrap.js"></script>
+                <script src="script.js"></script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <script src="bootstrap.bundle.js"></script>
-    <script src="bootstrap.js"></script>
-    <script src="script.js"></script>
 </body>
