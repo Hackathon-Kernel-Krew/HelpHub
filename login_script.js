@@ -14,6 +14,7 @@ function switchFrame() {
     document.getElementById("signin-section").classList.toggle("d-none");
     document.getElementById("signup-section").classList.toggle("d-none");
 }
+
 function switchFrame1() {
     document.getElementById("signin-section").classList.toggle("d-none");
     document.getElementById("forgot-section").classList.toggle("d-none");
@@ -47,7 +48,7 @@ function userSignUp() {
 
     var r = new XMLHttpRequest();
 
-    r.onreadystatechange = function () {
+    r.onreadystatechange = function() {
         if (r.readyState == 4) {
             var t = r.responseText;
             // alert(t);
@@ -80,7 +81,7 @@ function userSignUp() {
             } else if (t == "Invalid Email address!") {
                 document.getElementById("s_email").style = "color: red;";
                 document.getElementById("s_email").innerHTML = t;
-            }else if (t == "Please Enter Your Username") {
+            } else if (t == "Please Enter Your Username") {
                 document.getElementById("s_username").style = "color: red;";
                 document.getElementById("s_username").innerHTML = t;
             } else if (t == "Please enter your Password!") {
@@ -98,7 +99,7 @@ function userSignUp() {
             } else if (t == "Passwords not matching") {
                 document.getElementById("s_repassword").style = "color: red;";
                 document.getElementById("s_repassword").innerHTML = t;
-            }else if (t == "Plece select Gender") {
+            } else if (t == "Plece select Gender") {
                 document.getElementById("spangender").style = "color: red;";
                 document.getElementById("spangender").innerHTML = t;
             }
@@ -118,8 +119,7 @@ function type() {
     } else if (document.getElementById("cu_email").textContent == "Email address must <50 characters") {
         document.getElementById("cu_email").style = "color: #151515;";
         document.getElementById("cu_email").innerHTML = "Email";
-    }
-    else if (document.getElementById("cu_email").textContent == "Email not matching") {
+    } else if (document.getElementById("cu_email").textContent == "Email not matching") {
         document.getElementById("cu_email").style = "color: #151515;";
         document.getElementById("cu_email").innerHTML = "Email";
     } else if (document.getElementById("cu_email").textContent == "Something went wrong") {
@@ -167,7 +167,7 @@ function type() {
     } else if (document.getElementById("s_email").textContent == "Invalid Email address!") {
         document.getElementById("s_email").style = "color: #151515;";
         document.getElementById("s_email").innerHTML = "Email";
-    }else if (document.getElementById("s_username").textContent == "Please Enter Your Username") {//
+    } else if (document.getElementById("s_username").textContent == "Please Enter Your Username") { //
         document.getElementById("s_username").style = "color: #151515;";
         document.getElementById("s_username").innerHTML = "Email";
     } else if (document.getElementById("s_password").textContent == "Please enter your Password!") {
@@ -188,44 +188,44 @@ function type() {
     } else if (document.getElementById("erress").textContent == "User with the same Email or Mobile already exists.") {
         document.getElementById("s_mobile").style = "color: #151515;";
         document.getElementById("s_mobile").innerHTML = "Mobile";
-    }else if (document.getElementById("spangender").textContent == "Plece select Gender") {
+    } else if (document.getElementById("spangender").textContent == "Plece select Gender") {
         document.getElementById("spangender").style = "color: #151515;";
         document.getElementById("spangender").innerHTML = "Select Gender";
     }
 }
 
-function type1(){
+function type1() {
     if (document.getElementById("s_Verification").textContent == "PLease enter verification code") {
-            document.getElementById("s_Verification").style = "color: #151515;";
-            document.getElementById("s_Verification").innerHTML = "Verification Code";
-        } else if (document.getElementById("s_Verification").textContent == "Verification code must have 6 characters") {
-            document.getElementById("s_Verification").style = "color: #151515;";
-            document.getElementById("s_Verification").innerHTML = "Verification Code";
-        } else if (document.getElementById("s_v_email").textContent == "Please enter your email") {
-            document.getElementById("s_v_email").style = "color: #151515;";
-            document.getElementById("s_v_email").innerHTML = "Email";
-        } else if (document.getElementById("s_v_email").textContent == "Email address must <50 characters") {
-            document.getElementById("s_v_email").style = "color: #151515;";
-            document.getElementById("s_v_email").innerHTML = "Email";
-        } else if (document.getElementById("s_v_email").textContent == "Invalied email") {
-            document.getElementById("s_v_email").style = "color: #151515;";
-            document.getElementById("s_v_email").innerHTML = "Email";
-        } else if (document.getElementById("s_n_password").textContent == "PLease enter new password") {
-            document.getElementById("s_n_password").style = "color: #151515;";
-            document.getElementById("s_n_password").innerHTML = "New Password";
-        } else if (document.getElementById("s_n_password").textContent == "Password must have 8-16 characters") {
-            document.getElementById("s_n_password").style = "color: #151515;";
-            document.getElementById("s_n_password").innerHTML = "New Password";
-        } else if (document.getElementById("s_n_repassword").textContent == "Please enter confirm password") {
-            document.getElementById("s_n_repassword").style = "color: #151515;";
-            document.getElementById("s_n_repassword").innerHTML = "new Re Password";
-        } else if (ddocument.getElementById("s_n_repassword").textContent == "Passwords not matching") {
-            document.getElementById("s_n_repassword").style = "color: #151515;";
-            document.getElementById("s_n_repassword").innerHTML = "new Re Password";
-        } else if (document.getElementById("s_Verification").textContent == "Invlied verification code") {
-            document.getElementById("s_Verification").style = "color: #151515;";
-            document.getElementById("s_Verification").innerHTML = "Verification Code";
-        }
+        document.getElementById("s_Verification").style = "color: #151515;";
+        document.getElementById("s_Verification").innerHTML = "Verification Code";
+    } else if (document.getElementById("s_Verification").textContent == "Verification code must have 6 characters") {
+        document.getElementById("s_Verification").style = "color: #151515;";
+        document.getElementById("s_Verification").innerHTML = "Verification Code";
+    } else if (document.getElementById("s_v_email").textContent == "Please enter your email") {
+        document.getElementById("s_v_email").style = "color: #151515;";
+        document.getElementById("s_v_email").innerHTML = "Email";
+    } else if (document.getElementById("s_v_email").textContent == "Email address must <50 characters") {
+        document.getElementById("s_v_email").style = "color: #151515;";
+        document.getElementById("s_v_email").innerHTML = "Email";
+    } else if (document.getElementById("s_v_email").textContent == "Invalied email") {
+        document.getElementById("s_v_email").style = "color: #151515;";
+        document.getElementById("s_v_email").innerHTML = "Email";
+    } else if (document.getElementById("s_n_password").textContent == "PLease enter new password") {
+        document.getElementById("s_n_password").style = "color: #151515;";
+        document.getElementById("s_n_password").innerHTML = "New Password";
+    } else if (document.getElementById("s_n_password").textContent == "Password must have 8-16 characters") {
+        document.getElementById("s_n_password").style = "color: #151515;";
+        document.getElementById("s_n_password").innerHTML = "New Password";
+    } else if (document.getElementById("s_n_repassword").textContent == "Please enter confirm password") {
+        document.getElementById("s_n_repassword").style = "color: #151515;";
+        document.getElementById("s_n_repassword").innerHTML = "new Re Password";
+    } else if (ddocument.getElementById("s_n_repassword").textContent == "Passwords not matching") {
+        document.getElementById("s_n_repassword").style = "color: #151515;";
+        document.getElementById("s_n_repassword").innerHTML = "new Re Password";
+    } else if (document.getElementById("s_Verification").textContent == "Invlied verification code") {
+        document.getElementById("s_Verification").style = "color: #151515;";
+        document.getElementById("s_Verification").innerHTML = "Verification Code";
+    }
 }
 
 function userlogin() {
@@ -240,11 +240,12 @@ function userlogin() {
 
     var request = new XMLHttpRequest();
 
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             var t = request.responseText;
             if (t == "success") {
-                alert(t);
+                // alert(t);
+                window.location = "home.php";
             } else if (t == "Please enter your email") {
                 document.getElementById("cu_email").style = "color: red;";
                 document.getElementById("cu_email").innerHTML = t;
@@ -286,7 +287,7 @@ function forgotPassword() {
 
     var request = new XMLHttpRequest();
 
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             var t = request.responseText;
             // alert(t);
@@ -327,7 +328,7 @@ function passwordChange() {
 
     var request = new XMLHttpRequest();
 
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             var t = request.responseText;
             if (t == "success") {

@@ -42,6 +42,7 @@ function sendnow() {
                 document.getElementById("m_email").style = "color: red;";
                 document.getElementById("m_email").innerHTML = t;
             } else if (t == "PLease enter you massage !") {
+                
                 document.getElementById("s_massage").style = "color: red;";
                 document.getElementById("s_massage").innerHTML = t;
             }else if (t == "There is no Emil like this") {

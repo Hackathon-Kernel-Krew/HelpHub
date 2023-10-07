@@ -8,10 +8,15 @@ function headerNotificationchecker() {
                 var notifyText = document.getElementById("chat-count-loader");
                 notifyText.classList.toggle("d-none");
 
+                var notifyText1 = document.getElementById("chat-count-loader1");
+                notifyText1.classList.toggle("d-none");
+
                 if (parseInt(text) < 10) {
                     notifyText.innerHTML = "0" + text;
+                    notifyText1.innerHTML = "0" + text;
                 } else {
                     notifyText.innerHTML = text;
+                    notifyText1.innerHTML = text;
                 }
             }
         }

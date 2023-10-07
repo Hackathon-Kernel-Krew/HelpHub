@@ -173,3 +173,19 @@
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
 }
+
+.button1 {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #f8744cd8, #ff6e42);
+    text-align: center;
+    cursor: pointer;
+    color: white;
+}
+
+.button1-modify {
+    background: linear-gradient(90deg, #1d1d1dd8, #252525);
+    color: white;
+}

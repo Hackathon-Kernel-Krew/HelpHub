@@ -5,7 +5,7 @@ require "connection.php";
 $firstName = $_POST["firstName"];
 $lastName = $_POST["lastName"];
 $username = $_POST["username"];
-$email = $_POST["email"];
+$email = $_SESSION["user"]["email"];
 $mobile = $_POST["mobile"];
 $password = $_POST["password"];
 $bio = $_POST["bio"];
@@ -21,13 +21,13 @@ if (isset($_FILES["image"])) {
     } else {
         $new_file_extention;
         if ($file_extention == "image/jpg") {
-            $new_file_extention = ".jpg";
+            $new_file_extention = ".png";
         } else if ($file_extention == "image/jpeg") {
-            $new_file_extention = ".jpeg";
+            $new_file_extention = ".png";
         } else if ($file_extention == "image/png") {
             $new_file_extention = ".png";
         } else if ($file_extention == "image/svg+xml") {
-            $new_file_extention = ".svg";
+            $new_file_extention = ".png";
         }
 
         $file_name = "resources/images/profile_images/" . $email . $new_file_extention;
